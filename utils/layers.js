@@ -1,5 +1,5 @@
 const FS_LAYERS = [
-    "app",
+    "appLayer",
     "processes",
     "pages",
     "widgets",

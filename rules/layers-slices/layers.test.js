@@ -69,7 +69,7 @@ describe("Import boundaries between layers", () => {
     it("should lint with cross-import errors.", async () => {
         const wrongImports = [
             `import { getRoute } from "pages/auth";`,
-            `import { getStore } from "app/store";`,
+            `import { getStore } from "appLayer/store";`,
         ];
 
         const report = await eslint.lintText(wrongImports.join("\n"), {
@@ -85,7 +85,7 @@ describe("Import boundaries between layers", () => {
         ].join("\n");
 
         const report = await eslint.lintText(validCodeSnippet, {
-            filePath: "src/app/ui/app.js",
+            filePath: "src/appLayer/ui/app.js",
         });
         assert.strictEqual(report[0].errorCount, 0);
     });

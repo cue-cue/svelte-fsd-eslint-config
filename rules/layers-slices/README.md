@@ -10,7 +10,7 @@ Add `"@feature-sliced/eslint-config/rules/layers-slices"` to your `extends` sect
 // 👎 Fail
 // 🛣 features/auth-form/index.ts
 import { getRoute } from "pages/auth";
-import { getStore } from "app/store";
+import { getStore } from "appLayer/store";
 import { getAuthCtx } from "features/logout";
 import { UserAvatar } from "features/viewer-picker";
 
@@ -33,7 +33,7 @@ import { UserAvatar } from "entities/user";
 > import { ... } from "../ProfilePage";
 >
 > // Imported into ...
-> @path "app/**"                   // 🟩 valid (upper layer)
+> @path "appLayer/**"                   // 🟩 valid (upper layer)
 > @path "shared/router"            // 🟥 not valid (lower layer)
 > @path "pages/CartPage"           // 🟥 not valid (sibling slice)
 > @path "pages/router"             // 🟥 not valid (sibling slice)
@@ -44,7 +44,7 @@ import { UserAvatar } from "entities/user";
 >
 > ```js
 > @path "pages/_router"
-> import { ... } from "app"           // 🟥 not valid (lower layer)
+> import { ... } from "appLayer"           // 🟥 not valid (lower layer)
 > 
 > @path "shared/lib"
 > import { ... } from "pages/_router" // 🟥 not valid (lower layer)

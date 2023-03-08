@@ -55,7 +55,7 @@ describe("Allow publicAPI for shared segments with _prefix:", () => {
         import { Two } from "@shared/_note/two";
         import { Route } from "shared/_route";
         `,
-            {filePath: "src/app/ui/index.js"});
+            {filePath: "src/appLayer/ui/index.js"});
         assert.strictEqual(report[0].errorCount, 0);
     });
 
@@ -65,7 +65,7 @@ describe("Allow publicAPI for shared segments with _prefix:", () => {
         import { Four } from "shared/_note/three/four";
         import { Route } from "shared/route";
         `,
-            {filePath: "src/app/ui/index.js"});
+            {filePath: "src/appLayer/ui/index.js"});
         assert.strictEqual(report[0].errorCount, 3);
     });
 
@@ -74,7 +74,7 @@ describe("Allow publicAPI for shared segments with _prefix:", () => {
         import { One } from "shared/route/one";
         import { Two } from "@shared/note/two";
         `,
-            {filePath: "src/app/ui/index.js"});
+            {filePath: "src/appLayer/ui/index.js"});
         assert.strictEqual(report[0].errorCount, 2);
     });
 });
@@ -91,7 +91,7 @@ describe("PublicAPI import boundaries:", () => {
         import { TicketCard } from "@src/entities/ticket/ui";
         import { Ticket } from "@src/entities/ticket/ui.tsx";
         `,
-            { filePath: "src/app/ui/index.js" });
+            { filePath: "src/appLayer/ui/index.js" });
         assert.strictEqual(report[0].errorCount, 8);
     });
 
@@ -105,7 +105,7 @@ describe("PublicAPI import boundaries:", () => {
         import { orderModel } from "entities/order";
         import { TicketCard } from "@/entities/ticket";
         import { FixButton } from "@src/shared/ui/fix-button";
-        `, { filePath: "src/app/ui/index.js" });
+        `, { filePath: "src/appLayer/ui/index.js" });
         assert.strictEqual(report[0].errorCount, 0);
     });
 
@@ -113,7 +113,7 @@ describe("PublicAPI import boundaries:", () => {
         const report = await eslint.lintText(`
         import { AuthForm } from "features/auth/form";
         import { Button } from "shared/ui";
-        `, { filePath: "src/app/ui/index.js" });
+        `, { filePath: "src/appLayer/ui/index.js" });
 
         assert.strictEqual(report[0].errorCount, 0);
     });

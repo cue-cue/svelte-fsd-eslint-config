@@ -53,7 +53,7 @@ describe("TypeScript integration tests:", () => {
         };
         
         const configs: Array<IConfig> = [];
-        `, { filePath: "src/app/ui/index.ts" });
+        `, { filePath: "src/appLayer/ui/index.ts" });
 
         assert.strictEqual(report[0].errorCount, 0);
     });
@@ -63,7 +63,7 @@ describe("TypeScript integration tests:", () => {
         import { LoginAPI } from "shared/api";
         import { getRoute } from "pages/auth";
         const configs: Array<string> = [];
-        `, { filePath: "src/app/ui/index.ts" });
+        `, { filePath: "src/appLayer/ui/index.ts" });
 
         assert.strictEqual(report[0].errorCount, 1);
     });

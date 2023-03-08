@@ -6,7 +6,7 @@
 
 // Allowed paths for public API
 const PUBLIC_PATHS = [
-    "app",
+    "appLayer",
     "pages",
     "features",
     "shared",
@@ -15,14 +15,14 @@ const PUBLIC_PATHS = [
 ];
 // Private imports are prohibited, use public imports instead
 const PRIVATE_PATHS = [
-    "app/**",
+    "appLayer/**",
     "pages/**",
     "features/**",
     "shared/*/**",
 ];
 // Prefer absolute imports instead of relatives (for root modules)
 const RELATIVE_PATHS = [
-    "../**/app",
+    "../**/appLayer",
     "../**/pages",
     "../**/features",
     "../**/shared",

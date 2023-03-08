@@ -145,7 +145,7 @@ describe("Import order experimental:", () => {
         
         import { Bee } from 'features/bee';
         
-        import { Apple } from 'app/apple'; 
+        import { Apple } from 'appLayer/apple'; 
         `);
 
         assert.strictEqual(report[0].errorCount, 0);
@@ -157,7 +157,7 @@ describe("Import order experimental:", () => {
         import { Dream } from 'shared/dream';
         import { Cord } from 'entities/cord';
         import { Bee } from 'features/bee';
-        import { Apple } from 'app/apple';
+        import { Apple } from 'appLayer/apple';
         `);
 
         assert.strictEqual(report[0].errorCount, 4);

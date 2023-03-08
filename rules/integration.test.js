@@ -39,7 +39,7 @@ describe("Integration tests:", () => {
         import { Button } from "shared/ui/button";
         import { model } from "../model";
         import { styles } from "./styles.module.scss";
-        `, { filePath: "src/app/ui/index.js" });
+        `, { filePath: "src/appLayer/ui/index.js" });
 
         assert.strictEqual(report[0].errorCount, 0);
     });
@@ -48,7 +48,7 @@ describe("Integration tests:", () => {
         const report = await eslint.lintText(`
         import { LoginAPI } from "shared/api";
         import { getRoute } from "pages/auth";
-        `, { filePath: "src/app/ui/index.js" });
+        `, { filePath: "src/appLayer/ui/index.js" });
 
         assert.strictEqual(report[0].errorCount, 1);
     });
